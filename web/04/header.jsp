@@ -10,8 +10,8 @@ MyBlog:blog.darkmi.com
 --%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <div>
-this is header,date = 
-<%= new java.util.Date().toString() %>
+    this is header,date =
+    <%= new java.util.Date().toString() %>
 </div>

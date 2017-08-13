@@ -1,28 +1,28 @@
- <%-- 
+<%--
 
-	FileName:request.jsp
-	desc: JSP内置对象Request对象示例程序.
-	Author:darkmi
-	Date:2014/12/16
-	Copyright:www.jikexueyuan.com
-	MyBlog:blog.darkmi.com
+   FileName:request.jsp
+   desc: JSP内置对象Request对象示例程序.
+   Author:darkmi
+   Date:2014/12/16
+   Copyright:www.jikexueyuan.com
+   MyBlog:blog.darkmi.com
 
 --%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <%request.setCharacterEncoding("UTF-8");%>
 
 <html>
 <head>
-<title>request对象_例1</title>
+    <title>request对象_例1</title>
 </head>
 <body bgcolor="#FFFFF0">
 <form action="" method="post">
-<input type="text" name="qwe">
-<input type="submit" value="提交">
+    <input type="text" name="qwe">
+    <input type="submit" value="提交">
 </form>
 请求方式：<%=request.getMethod()%><br>
 请求的资源：<%=request.getRequestURI()%><br>
