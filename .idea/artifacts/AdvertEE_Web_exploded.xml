@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="AdvertEE:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/AdvertEE_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="AdvertEE/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="AdvertEE" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
