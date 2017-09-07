@@ -20,13 +20,14 @@ public class LoginServlet16 extends HttpServlet
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        System.out.println("\r\n    LoginServlet16处理\r\n    { ");
         //取得参数username的值
         String uname = request.getParameter("uname");
         String passwd = request.getParameter("upwd");
         String returnUri = request.getParameter("return_uri");
-        System.out.println("用户名 ==》 " + uname);
-        System.out.println("密码 ==》 " + passwd);
-        System.out.println("return uri ==> " + returnUri);
+        System.out.println("        用户名 ==》 " + uname);
+        System.out.println("        密码 ==》 " + passwd);
+        System.out.println("        return uri ==> " + returnUri);
 
         RequestDispatcher rd = null;
         if (uname == null || passwd == null)
@@ -59,6 +60,7 @@ public class LoginServlet16 extends HttpServlet
                 rd.forward(request, response);
             }
         }
+        System.out.println("\r\n    } ");
     }
 
 }

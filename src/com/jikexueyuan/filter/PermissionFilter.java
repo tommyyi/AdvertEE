@@ -32,7 +32,7 @@ public class PermissionFilter implements Filter
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException
     {
-        System.out.println("权限校验过滤器 { ");
+        System.out.println("拦截器校验权限\r\n{\r\n");
         // 将ServletRequest转换为HttpServletRequest
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
@@ -44,15 +44,17 @@ public class PermissionFilter implements Filter
         //System.out.println("Request Uri ==> " + requestUri);
 
         String servletPath = request.getServletPath();
-        System.out.println("Servlet Path ==> " + servletPath);
+        System.out.println("    Servlet Path ==> " + servletPath);
 
         // 获取HttpSession中的信息
         HttpSession session = request.getSession();
         String flag = (String) session.getAttribute("flag");
 
         //权限校验
-        if (servletPath != null && (servletPath.equals("/16/login.jsp") || servletPath.equals("/LoginServlet16") || servletPath.equals("/16/index.jsp")))
+        if (servletPath != null &&
+                    (servletPath.equals("/16/login.jsp") || servletPath.equals("/LoginServlet16") || servletPath.equals("/16/index.jsp")))
         {
+            System.out.println("    其它组件继续处理");
             chain.doFilter(servletRequest, servletResponse);
         }
         else
@@ -73,11 +75,12 @@ public class PermissionFilter implements Filter
             {
                 request.setAttribute("msg", "您尚未登陆！<br/>");
                 request.setAttribute("return_uri", servletPath);
+                System.out.println("    没有登录，转发到16/login.jsp");
                 RequestDispatcher rd = request.getRequestDispatcher("/16/login.jsp");
                 rd.forward(request, response);
             }
         }
-        System.out.println("权限校验过滤器 } ");
+        System.out.println("\r\n} ");
     }
 
     @Override
