@@ -28,6 +28,9 @@ this is hello.jsp <br/><br/>
 
 <br/>
 <br/>
-返回首页 <a href="<%= request.getContextPath() %>/16/index.jsp">index.jsp</a><br/>
+返回首页 <a href="
+<%=
+request.getContextPath()
+%>/16/index.jsp">index.jsp</a><br/>
 </body>
 </html>
